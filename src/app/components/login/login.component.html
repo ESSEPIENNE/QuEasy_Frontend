@@ -1,0 +1,52 @@
+<div class="container-login">
+  <div class="login-image">
+    <img src="../../../assets/images/queue.png" alt="queue" />
+  </div>
+  <div class="login-form">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="login-input-group">
+        <label for="email" class="label-form">E-Mail</label>
+        <div class="email-input">
+          <i class="far fa-envelope"></i>
+          <input
+            type="email"
+            id="email"
+            placeholder="E-mail"
+            class="input-form"
+            formControlName="email"
+          />
+        </div>
+        <small
+          *ngIf="
+            !loginForm.get('email').valid && loginForm.get('email').touched
+          "
+          class="invalid-message"
+          >Inserisci una e-mail valida!</small
+        >
+      </div>
+      <div class="login-input-group">
+        <label for="password" class="label-form">Password</label>
+        <div class="password-input">
+          <i class="fas fa-key"></i>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            class="input-form"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <button class="login-button" type="submit" [disabled]="!loginForm.valid">
+        LOG IN
+      </button>
+    </form>
+  </div>
+</div>
+
+<div
+  class="snackbar snackbar-danger"
+  [ngClass]="{ 'snackbar-show': error ? true : false }"
+>
+  {{ error }}
+</div>

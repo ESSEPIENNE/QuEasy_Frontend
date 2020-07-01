@@ -1,0 +1,21 @@
+.stores-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: auto;
+  justify-content: center;
+  margin-top: 5vh;
+
+  @include resize('medium') {
+    width: 85%;
+  }
+
+  @include resize('large') {
+    width: 75%;
+  }
+
+  @include resize('extra-large') {
+    width: 67%;
+  }
+}

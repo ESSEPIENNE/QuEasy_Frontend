@@ -1,0 +1,21 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+
+// Variables
+@import "./partials/variables";
+
+// Mixin
+@import "./partials/mixin";
+
+// Imports
+@import "./partials/base";
+@import "./partials/page_not_found";
+@import "./partials/nav-bar";
+@import "./partials/login";
+@import "./partials/stores";
+@import "./partials/store-item";
+@import "./partials/snackbar";
+@import "./partials/store";
+
+// Angular
+@import "./partials/ng_form";

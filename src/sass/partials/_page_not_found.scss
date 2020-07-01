@@ -1,0 +1,45 @@
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10vh;
+  width: 85%;
+
+  @include resize('small') {
+    width: 70%;
+  }
+
+  @include resize('medium') {
+    width: 60%;
+  }
+
+  @include resize('large') {
+    width: 50%;
+  }
+
+  @include resize('extra-large') {
+    width: 37%;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 45px;
+    text-align: center;
+    color: $dark-blue;
+
+    @include resize('qhd') {
+      font-size: 55px;
+    }
+
+    @include resize('4k') {
+      font-size: 90px;
+    }
+  }
+
+  img {
+    margin-top: 3vh;
+    width: 100%;
+  }
+}

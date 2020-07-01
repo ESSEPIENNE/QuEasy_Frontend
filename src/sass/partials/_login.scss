@@ -1,0 +1,195 @@
+.container-login,
+input,
+label,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container-login {
+  height: auto;
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.15);
+  border-radius: 1em;
+  margin: auto;
+  justify-items: center;
+  width: 95%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 5vh;
+
+  @include resize("small") {
+    width: 70%;
+  }
+
+  @include resize("medium") {
+    width: 55%;
+  }
+
+  @include resize("large") {
+    width: 80%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    margin-top: 15vh;
+  }
+
+  @include resize("extra-large") {
+    width: 70%;
+  }
+
+  @include resize("qhd") {
+    width: 60%;
+  }
+
+  .login-image {
+    width: 100%;
+    padding: 2em;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+
+      @include resize("qhd") {
+        max-height: 800px;
+      }
+
+      @include resize("4k") {
+        max-height: 1200px;
+      }
+    }
+  }
+
+  .login-form {
+    padding: 2em;
+    width: 100%;
+    height: 100%;
+    background-color: $primary;
+    border-radius: 0 0 1em 1em;
+
+    @include resize("large") {
+      border-radius: 0 1em 1em 0;
+    }
+
+    form {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .login-input-group {
+        margin: 0.5em;
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+
+        .input-form {
+          font-size: 1em;
+          padding: 0.5em;
+          border-radius: 1em;
+          border: 1px solid $secondary;
+          box-shadow: 0 0.5em 1em rgba(80, 80, 80, 0.15);
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .label-form {
+          font-size: 13px;
+          font-weight: 600;
+          color: $secondary;
+          margin-bottom: 0.3em;
+        }
+      }
+
+      .email-input {
+        position: relative;
+
+        input {
+          text-indent: 32px;
+          width: 100%;
+        }
+
+        .fa-envelope {
+          position: absolute;
+          top: 11px;
+          left: 15px;
+          font-size: 16px;
+          color: $default;
+        }
+      }
+
+      .password-input {
+        position: relative;
+        width: 100%;
+
+        input {
+          text-indent: 32px;
+          width: 100%;
+        }
+
+        .fa-key {
+          position: absolute;
+          top: 11px;
+          left: 15px;
+          font-size: 16px;
+          color: $default;
+        }
+      }
+
+      .login-button {
+        width: 95%;
+        margin-top: 1em;
+        padding: 0.5em;
+        border-radius: 0.6em;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: $secondary;
+        border: 1px solid $secondary;
+        color: $primary;
+        box-shadow: 0 0.5em 1em rgba(80, 80, 80, 0.15);
+        cursor: pointer;
+
+        &:hover:enabled {
+          background-color: $dark-blue;
+          border: 1px solid $dark-blue;
+          color: $secondary;
+        }
+
+        &:disabled {
+          background-color: rgba($color: $secondary, $alpha: 0.7);
+          border: 1px solid rgba($color: $secondary, $alpha: 0.3);
+          color: lighten($black, 60%);
+          cursor: not-allowed;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      @include resize("medium") {
+        .login-input-group,
+        .login-button {
+          width: 70%;
+        }
+      }
+
+      @include resize("large") {
+        .login-input-group,
+        .login-button {
+          width: 60%;
+        }
+      }
+
+      // @include resize('extra-large') {
+
+      //   .login-input-group,
+      //   .login-button {
+      //     width: 50%;
+      //   }
+      // }
+    }
+  }
+}

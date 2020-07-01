@@ -1,0 +1,34 @@
+$white: #ffffffff;
+$black: #000000ff;
+
+$default: #00171fff;
+$primary: #007ea7ff;
+$secondary: $white;
+
+$error: #d3362b;
+$error-message: #a1251c;
+$success: #429432;
+
+$dark-blue: #003459ff;
+$light-blue: #00a8e8ff;
+
+$breakpoints: (
+  "small": (
+    min-width: 567px,
+  ),
+  "medium": (
+    min-width: 768px,
+  ),
+  "large": (
+    min-width: 1024px,
+  ),
+  "extra-large": (
+    min-width: 1200px,
+  ),
+  "qhd": (
+    min-width: 2200px,
+  ),
+  "4k": (
+    min-width: 3300px,
+  ),
+) !default;
