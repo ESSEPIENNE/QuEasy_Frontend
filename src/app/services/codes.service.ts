@@ -11,7 +11,7 @@ import { Code } from '../models/code.model';
 export class CodesService {
   constructor(private http: HttpClient) {}
 
-  getGetStoreCodes(storeId: string) {
+  getStoreCodes(storeId: string) {
     return this.http
       .get<Code[]>(`${config.apiUrl}/stores/${storeId}/codes`)
       .pipe(
