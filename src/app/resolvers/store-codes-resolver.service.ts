@@ -13,6 +13,6 @@ export class StoreCodesResolver implements Resolve<Code[]> {
   ): Observable<Code[]> | Promise<Code[]> | Code[] {
     const storeId = route.paramMap.get('id');
 
-    return this.codesService.getGetStoreCodes(storeId);
+    return this.codesService.getStoreCodes(storeId);
   }
 }
