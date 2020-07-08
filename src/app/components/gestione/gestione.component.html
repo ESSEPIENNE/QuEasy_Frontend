@@ -1,0 +1,8 @@
+<div class="gestione-store-items-container">
+  <div class="add-item"><i class="fas fa-plus"></i> Nuovo</div>
+  <app-gestione-store-item
+    *ngFor="let store of stores"
+    [store]="store"
+    class="gestione-store-item-wrapper"
+  ></app-gestione-store-item>
+</div>

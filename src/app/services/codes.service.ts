@@ -22,9 +22,7 @@ export class CodesService {
       );
   }
 
-  removeCode(storeId:string, codeId: string) {
-    console.log('entrato');
-    
+  removeCode(storeId:string, codeId: string) {    
     return this.http.delete(`${config.apiUrl}/stores/${storeId}/codes/${codeId}`)
       .pipe(
         catchError((error) => {

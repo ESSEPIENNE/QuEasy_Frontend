@@ -11,6 +11,9 @@
       <a routerLink="/stores/1" (click)="onLinkClicked()">Negozio</a>
     </li>
     <li routerLinkActive="active" *appRole="'admin'">
+      <a routerLink="/managment" (click)="onLinkClicked()">Gestione</a>
+    </li>
+    <li routerLinkActive="active" *appRole="'admin'">
       <a routerLink="/stores" (click)="onLinkClicked()">Negozi</a>
     </li>
     <li (click)="onLogout()">

@@ -103,7 +103,6 @@ export class StoreComponent implements OnInit, OnChanges {
   removeCode(codeId: string) {
     
     this.codesService.removeCode(this.store._id, codeId).subscribe((data) => {
-      console.log('remove');
       const codeStoreIndex = this.inStoreCodes.findIndex(x => x._id === codeId)
       const codeQueueIndex = this.inQueueCodes.findIndex(x => x._id === codeId);
       if (codeStoreIndex > -1)

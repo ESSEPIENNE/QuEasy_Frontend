@@ -14,6 +14,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RoleDirective } from './directives/role.directive';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { GestioneComponent } from './components/gestione/gestione.component';
+import { GestioneStoreItemComponent } from './components/gestione/gestione-store-item/gestione-store-item.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     NavBarComponent,
     PageNotFoundComponent,
     RoleDirective,
+    GestioneComponent,
+    GestioneStoreItemComponent,
   ],
   imports: [
     BrowserModule,
