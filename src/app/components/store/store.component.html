@@ -31,7 +31,8 @@
     <div class="code-container" *ngFor="let code of inQueueCodes">
       <span class="code">{{ code._id }}</span>
       <span class="date">{{ code.updated_at }}</span>
-      <span class="remove"
+      <span class="remove"  
+      (click)="removeCode(code._id)"
         ><i class="fas fa-minus-circle remove-button"></i
       ></span>
     </div>
@@ -41,7 +42,7 @@
     <div class="code-container" *ngFor="let code of inStoreCodes">
       <span class="code">{{ code._id }}</span>
       <span class="date">{{ code.updated_at }}</span>
-      <span class="remove"
+      <span class="remove" (click)="removeCode(code._id)"
         ><i class="fas fa-minus-circle remove-button"></i
       ></span>
     </div>

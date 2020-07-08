@@ -21,4 +21,16 @@ export class CodesService {
         })
       );
   }
+
+  removeCode(storeId:string, codeId: string) {
+    console.log('entrato');
+    
+    return this.http.delete(`${config.apiUrl}/stores/${storeId}/codes/${codeId}`)
+      .pipe(
+        catchError((error) => {
+          console.log(error);
+          return throwError(error);
+        })
+      );
+  }
 }

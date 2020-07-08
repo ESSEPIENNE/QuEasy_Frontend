@@ -5,6 +5,7 @@ import { MultiDataSet, Label, Color } from 'ng2-charts';
 
 import { Store } from 'src/app/models/store.model';
 import { Code } from 'src/app/models/code.model';
+import { CodesService } from 'src/app/services/codes.service';
 
 @Component({
   selector: 'app-store',
@@ -24,7 +25,7 @@ export class StoreComponent implements OnInit, OnChanges {
   public doughnutChartOptions: ChartOptions;
   public doughnutChartColors: Color[];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private codesService: CodesService) {}
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => (this.store = data['store']));
@@ -62,5 +63,13 @@ export class StoreComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes', changes);
+  }
+
+  removeCode(codeId: string) {
+    
+    this.codesService.removeCode(this.store._id, codeId).subscribe((data) => {
+      console.log('remove');
+      this.codes.splice(this.codes.findIndex(x => x._id === codeId), 1);
+    });
   }
 }
