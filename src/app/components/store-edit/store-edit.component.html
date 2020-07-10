@@ -1,0 +1,62 @@
+<div class="store-edit-container">
+  <span class="form-title">Crea Negozio</span>
+  <form
+    [formGroup]="createStoreForm"
+    (submit)="onSubmit()"
+    class="store-edit-form-container"
+  >
+    <div class="avatar-upload">
+      <img
+        [src]="avatar || avatarUploadPlaceholder"
+        alt=""
+        id="avatar-preview"
+        name="avatar-preview"
+        class="avatar-preview"
+        (click)="avatarInput.click()"
+      />
+      <input
+        type="file"
+        formControlName="avatar"
+        id="avatar"
+        class="hidden-image-uploader"
+        (change)="imageUploaded($event)"
+        #avatarInput
+      />
+    </div>
+    <div class="store-edit-form-group name">
+      <label for="name" class="label">Nome Negozio</label>
+      <input
+        type="text"
+        formControlName="name"
+        id="name"
+        placeholder="Nome Negozio"
+        class="input"
+      />
+    </div>
+    <div class="store-edit-form-group max-in-store">
+      <label for="max_in_store" class="label"
+        >N° Massimo persone in negozio</label
+      >
+      <input
+        type="number"
+        formControlName="maxInStore"
+        min="0"
+        id="max_in_store"
+        placeholder="In negozio"
+        class="input"
+      />
+    </div>
+    <div class="store-edit-form-group max-in-queue">
+      <label for="max_in_coda" class="label">N° Massimo persone in coda</label>
+      <input
+        type="number"
+        formControlName="maxInQueue"
+        min="0"
+        id="max_in_queue"
+        placeholder="In coda"
+        class="input"
+      />
+    </div>
+    <button type="submit" class="store-edit-form-submit">Crea Negozio</button>
+  </form>
+</div>

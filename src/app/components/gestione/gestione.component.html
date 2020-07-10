@@ -1,8 +1,11 @@
 <div class="gestione-store-items-container">
-  <div class="add-item"><i class="fas fa-plus"></i> Nuovo</div>
+  <div class="add-item" [routerLink]="['create']">
+    <i class="fas fa-plus"></i> Nuovo
+  </div>
   <app-gestione-store-item
     *ngFor="let store of stores"
     [store]="store"
     class="gestione-store-item-wrapper"
+    (delete)="onDelete($event)"
   ></app-gestione-store-item>
 </div>

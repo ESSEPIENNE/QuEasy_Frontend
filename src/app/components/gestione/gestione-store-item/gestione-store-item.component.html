@@ -5,5 +5,7 @@
   <span class="name">{{ store.name }}</span>
   <span class="category"></span>
   <div class="edit"><i class="fas fa-edit"></i></div>
-  <div class="remove"><i class="fas fa-trash"></i></div>
+  <div class="remove" (click)="delete.emit(store._id)">
+    <i class="fas fa-trash"></i>
+  </div>
 </div>

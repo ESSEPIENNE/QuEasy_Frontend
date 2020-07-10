@@ -29,10 +29,9 @@
   <div class="queue-codes codes">
     <div class="codes-header">Codici in Coda</div>
     <div class="code-container" *ngFor="let code of inQueueCodes">
-      <span class="code">{{ code._id }}</span>
+      <span class="code">{{ code.code }}</span>
       <span class="date">{{ code.updated_at }}</span>
-      <span class="remove"  
-      (click)="removeCode(code._id)"
+      <span class="remove" (click)="removeCode(code)"
         ><i class="fas fa-minus-circle remove-button"></i
       ></span>
     </div>
@@ -40,9 +39,9 @@
   <div class="store-codes codes">
     <div class="codes-header">Codici in Negozio</div>
     <div class="code-container" *ngFor="let code of inStoreCodes">
-      <span class="code">{{ code._id }}</span>
+      <span class="code">{{ code.code }}</span>
       <span class="date">{{ code.updated_at }}</span>
-      <span class="remove" (click)="removeCode(code._id)"
+      <span class="remove" (click)="removeCode(code)"
         ><i class="fas fa-minus-circle remove-button"></i
       ></span>
     </div>

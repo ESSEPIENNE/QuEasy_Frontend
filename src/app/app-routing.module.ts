@@ -11,6 +11,7 @@ import { StoresResolver } from './resolvers/stores-resolver.service';
 import { StoreResolver } from './resolvers/store-resolver.service';
 import { StoreCodesResolver } from './resolvers/store-codes-resolver.service';
 import { GestioneComponent } from './components/gestione/gestione.component';
+import { StoreEditComponent } from './components/store-edit/store-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,6 +22,12 @@ const routes: Routes = [
     canActivate: [AdminGuard],
     canLoad: [AdminGuard],
     resolve: { stores: StoresResolver },
+  },
+  {
+    path: 'managment/create',
+    component: StoreEditComponent,
+    canActivate: [AdminGuard],
+    canLoad: [AdminGuard],
   },
   {
     path: 'stores',

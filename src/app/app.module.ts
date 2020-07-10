@@ -16,6 +16,7 @@ import { RoleDirective } from './directives/role.directive';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { GestioneComponent } from './components/gestione/gestione.component';
 import { GestioneStoreItemComponent } from './components/gestione/gestione-store-item/gestione-store-item.component';
+import { StoreEditComponent } from './components/store-edit/store-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { GestioneStoreItemComponent } from './components/gestione/gestione-store
     RoleDirective,
     GestioneComponent,
     GestioneStoreItemComponent,
+    StoreEditComponent,
   ],
   imports: [
     BrowserModule,

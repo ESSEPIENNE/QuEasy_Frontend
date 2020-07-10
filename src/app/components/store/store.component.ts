@@ -65,15 +65,14 @@ export class StoreComponent implements OnInit, OnChanges {
     ];
 
     this.pusherClient = new Pusher(config.pusherKey, { cluster: 'eu' });
-    const channel = this.pusherClient.subscribe('pippo');
+    const channel = this.pusherClient.subscribe(`store-${this.store._id}`);
 
     channel.bind('code-status-change', () => {
       this.codesService.getStoreCodes(this.store._id).subscribe((codes) => {
         console.log('updated');
 
         this.setCodes(codes);
-        this.setChartData();
-        this.chart.chart.update();
+        this.refreshChart();
       });
     });
   }
@@ -100,15 +99,25 @@ export class StoreComponent implements OnInit, OnChanges {
     console.log('changes', changes);
   }
 
-  removeCode(codeId: string) {
-    
-    this.codesService.removeCode(this.store._id, codeId).subscribe((data) => {
-      const codeStoreIndex = this.inStoreCodes.findIndex(x => x._id === codeId)
-      const codeQueueIndex = this.inQueueCodes.findIndex(x => x._id === codeId);
-      if (codeStoreIndex > -1)
-        this.inStoreCodes.splice(codeStoreIndex, 1);
-      if (codeQueueIndex > -1)
-        this.inQueueCodes.splice(codeQueueIndex, 1);
-    });
+  removeCode(code: Code) {
+    this.codesService
+      .removeCode(this.store._id, code.code)
+      .subscribe((data) => {
+        const codeStoreIndex = this.inStoreCodes.findIndex(
+          (x) => x._id === code._id
+        );
+        const codeQueueIndex = this.inQueueCodes.findIndex(
+          (x) => x._id === code._id
+        );
+        if (codeStoreIndex > -1) this.inStoreCodes.splice(codeStoreIndex, 1);
+        if (codeQueueIndex > -1) this.inQueueCodes.splice(codeQueueIndex, 1);
+
+        this.refreshChart();
+      });
+  }
+
+  refreshChart() {
+    this.setChartData();
+    this.chart.chart.update();
   }
 }

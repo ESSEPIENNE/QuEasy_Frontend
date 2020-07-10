@@ -30,4 +30,22 @@ export class StoresService {
       })
     );
   }
+
+  removeStore(storeId: string) {
+    return this.http.delete(`${config.apiUrl}/stores/${storeId}`).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  createStore(storeData: FormData) {
+    return this.http.post(`${config.apiUrl}/stores`, storeData).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(error);
+      })
+    );
+  }
 }
